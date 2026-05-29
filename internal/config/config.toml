@@ -1,0 +1,19 @@
+# Configuration for PrivX Importer
+
+# delete_mode alternatives:
+# disable   Instead of deleting, a host is disabled. This is the default.
+# delete    A host is deleted if is is missing in input.
+#delete_mode = "disable" 
+
+allowed_services = ["SSH","RDP","VNC","WEB","DB"]
+
+# update_mode alternatives
+# addonly | modify | sync
+update_mode = "sync"
+
+# Default for field managements status.
+# If a field does not have explicit managed / ignored flag, this will be in effect
+default_management_mode = "managed"
+
+[scope]
+tags = "import-managed"

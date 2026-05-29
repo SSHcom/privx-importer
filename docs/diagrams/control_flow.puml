@@ -1,0 +1,62 @@
+@startuml
+title PrivX Inventory Import - Packages
+
+top to bottom direction
+skinparam linetype ortho
+
+package "CLI Layer" {
+  [main]
+  [cli]
+}
+
+package "Workflow Layer" {
+  [workflow]
+  [runtime]
+}
+
+package "Processing Layer" {
+  [reader]
+  [transform]
+  [plan]
+  [validators]
+  [translators]
+}
+
+package "Infrastructure Layer" {
+  [privx]
+  [output]
+  [config]
+}
+
+package "Core Domain" {
+  [domain]
+  [host]
+  [field]
+  [util]
+}
+
+main --> cli
+
+cli --> workflow
+cli --> runtime
+
+workflow --> reader
+workflow --> transform
+workflow --> plan
+workflow --> privx
+
+transform --> validators
+transform --> translators
+
+plan --> host
+
+config --> field
+
+field --> util
+
+reader --> domain
+transform --> domain
+plan --> domain
+privx --> domain
+
+@enduml

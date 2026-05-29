@@ -1,0 +1,1001 @@
+# Data fields for host
+
+[[field]]
+input_keys = ["common_name", "host_name", "hostname"]
+kind = "string"
+name = "common_name"
+management = "managed"
+
+[[field]]
+kind = "string"
+name = "access_group_id"
+translator = "access_group"
+
+[[field]]
+input_keys = ["addresses", "ip", "ip_address"]
+kind = "list"
+name = "addresses"
+
+[[field]]
+kind = "bool"
+name = "audit_enabled"
+
+[[field]]
+kind = "string"
+name = "cloud_provider"
+
+[[field]]
+input_keys = ["cloud_provider_region"]
+kind = "string"
+name = "cloud_provider_region"
+
+[[field]]
+input_keys = ["certificate_template"]
+kind = "string"
+name = "certificate_template"
+
+[[field]]
+input_keys = ["comment"]
+kind = "string"
+name = "comment"
+
+[[field]]
+input_keys = ["contact_address"]
+kind = "string"
+name = "contact_address"
+
+[[field]]
+input_keys = ["deployable"]
+kind = "bool"
+name = "deployable"
+
+[[field]]
+default = "FALSE" # Documentation states "false" is the allowed value, but API returns "FALSE"
+input_keys = ["disabled"] 
+kind = "string" 
+name = "disabled" 
+
+[[field]]
+input_keys = ["disabled_reason"]
+kind = "string"
+name = "disabled_reason"
+
+[[field]]
+input_keys = ["distinguished_name"]
+kind = "string"
+name = "distinguished_name"
+
+[[field]]
+input_keys = ["external_id"]
+kind = "string"
+name = "external_id"
+
+[[field]]
+input_keys = ["host_classification"]
+kind = "string"
+name = "host_classification"
+
+[[field]]
+input_keys = ["host_type"]
+kind = "string"
+name = "host_type"
+
+[[field]]
+input_keys = ["id", "host_id"]
+kind = "string"
+name = "id"
+
+[[field]]
+input_keys = ["instance_id"]
+kind = "string"
+name = "instance_id"
+
+[[field]]
+input_keys = ["organization"]
+kind = "string"
+name = "organization"
+
+[[field]]
+input_keys = ["organizational_unit"]
+kind = "string"
+name = "organizational_unit"
+
+[[field]]
+input_keys = ["password_rotation_enabled"]
+kind = "bool"
+name = "password_rotation_enabled"
+
+# Password rotation
+
+[[field]]
+input_keys = ["password_rotation"]
+kind = "composite"
+name = "password_rotation"
+
+[[field.children]]
+kind = "list_composite"
+name = "rotation_status"
+
+[[field.children.children]]
+kind = "string"
+name = "principal"
+
+[[field.children.children]]
+kind = "string"
+name = "last_rotated"
+
+[[field.children.children]]
+kind = "string"
+name = "last_error"
+
+[[field.children.children]]
+kind = "string"
+name = "last_error_details"
+
+[[field.children]]
+kind = "string"
+name = "created_by"
+
+[[field.children]]
+kind = "string"
+name = "created"
+
+[[field.children]]
+kind = "string"
+name = "updated"
+
+[[field.children]]
+kind = "string"
+name = "updated_by"
+
+[[field.children]]
+input_keys = ["access_group_id"]
+kind = "string"
+name = "access_group_id"
+
+[[field.children]]
+input_keys = ["certificate_validation_options"]
+kind = "string"
+name = "certificate_validation_options"
+
+[[field.children]]
+input_keys = ["operating_system"]
+kind = "string"
+name = "operating_system"
+
+[[field.children]]
+input_keys = ["password_policy_id"]
+kind = "string"
+name = "password_policy_id"
+
+[[field.children]]
+input_keys = ["protocol"]
+kind = "string"
+name = "protocol"
+
+[[field.children]]
+input_keys = ["script_template_id"]
+kind = "string"
+name = "script_template_id"
+
+[[field.children]]
+input_keys = ["use_main_account"]
+kind = "bool"
+name = "use_main_account"
+
+[[field.children]]
+input_keys = ["winrm_address"]
+kind = "string"
+name = "winrm_address"
+
+[[field.children]]
+input_keys = ["winrm_host_certificate_trust_anchors"]
+kind = "string"
+name = "winrm_host_certificate_trust_anchors"
+
+[[field.children]]
+input_keys = ["winrm_port"]
+kind = "int"
+name = "winrm_port"
+
+[[field]]
+input_keys = ["scope"]
+kind = "list"
+name = "scope"
+
+[[field]]
+input_keys = ["source_id"]
+kind = "string"
+name = "source_id"
+
+# This field does not seem to update through API
+[[field]]
+input_keys = ["stand_alone_host", "standalone_host"]
+kind = "bool"
+name = "stand_alone_host"
+management = "ignored"
+
+[[field]]
+kind = "list"
+name = "tags"
+
+[[field]]
+default = "true"
+input_keys = ["tofu"]
+kind = "bool"
+name = "tofu"
+
+[[field]]
+input_keys = ["zone"]
+kind = "string"
+name = "zone"
+
+# Principals
+
+[[field]]
+input_keys = ["principal", "principals"]
+kind = "list_composite"
+name = "principals"
+
+[[field.children]]
+kind = "composite"
+name = "target_domain"
+
+[[field.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+[[field.children.children]]
+input_keys = ["id"]
+kind = "string"
+name = "id"
+
+[[field.children.children]]
+input_keys = ["deleted"]
+kind = "bool"
+name = "deleted"
+
+[[field.children]]
+input_keys = ["principal"]
+kind = "string"
+name = "principal"
+
+[[field.children]]
+input_keys = ["passphrase"]
+kind = "string"
+name = "passphrase"
+
+[[field.children]]
+input_keys = ["source"]
+kind = "string"
+name = "source"
+
+[[field.children]]
+input_keys = ["rotate"]
+kind = "bool"
+name = "rotate"
+
+[[field.children]]
+input_keys = ["use_for_password_rotation"]
+kind = "bool"
+name = "use_for_password_rotation"
+
+[[field.children]]
+input_keys = ["use_user_account"]
+kind = "bool"
+name = "use_user_account"
+
+[[field.children]]
+input_keys = ["username_attribute"]
+kind = "string"
+name = "username_attribute"
+
+# principals.applications
+
+[[field.children]]
+kind = "list_composite"
+name = "applications"
+
+[[field.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+# principals.service_options
+
+[[field.children]]
+kind = "composite"
+name = "service_options"
+
+[[field.children.children]]
+kind = "composite"
+name = "ssh"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "shell"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "exec"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "tunnels"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "x11"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "other"
+
+[[field.children.children]]
+kind = "composite"
+name = "rdp"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "audio"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children]]
+kind = "composite"
+name = "web"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "audio"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children]]
+kind = "composite"
+name = "vnc"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children]]
+kind = "composite"
+name = "db"
+
+[[field.children.children.children]]
+kind = "bool"
+name = "x"
+
+# principals.command_restrictions
+
+[[field.children]]
+kind = "composite"
+name = "command_restrictions"
+
+[[field.children.children]]
+input_keys = ["allow_no_match"]
+kind = "bool"
+name = "allow_no_match"
+
+[[field.children.children]]
+input_keys = ["audit_match"]
+kind = "bool"
+name = "audit_match"
+
+[[field.children.children]]
+input_keys = ["audit_no_match"]
+kind = "bool"
+name = "audit_no_match"
+
+[[field.children.children]]
+input_keys = ["banner"]
+kind = "string"
+name = "banner"
+
+[[field.children.children]]
+input_keys = ["enabled"]
+kind = "bool"
+name = "enabled"
+
+[[field.children.children]]
+input_keys = ["rshell_variant"]
+kind = "string"
+name = "rshell_variant"
+
+[[field.children.children]]
+kind = "composite"
+name = "default_whitelist"
+
+[[field.children.children.children]]
+input_keys = ["id"]
+kind = "string"
+name = "id"
+
+[[field.children.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+[[field.children.children]]
+kind = "list_composite"
+name = "whitelists"
+
+[[field.children.children.children]]
+kind = "composite"
+name = "whitelist"
+
+[[field.children.children.children.children]]
+input_keys = ["id"]
+kind = "string"
+name = "id"
+
+[[field.children.children.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+[[field.children.children.children]]
+kind = "list_composite"
+name = "roles"
+
+[[field.children.children.children.children]]
+input_keys = ["id"]
+kind = "string"
+name = "id"
+translator = "role"
+
+[[field.children.children.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+# end of principals.command restrictions
+
+[[field.children]]
+input_keys = ["role", "roles"]
+kind = "list_composite"
+name = "roles"
+
+[[field.children.children]]
+input_keys = ["id"]
+kind = "string"
+name = "id"
+translator = "role"
+
+[[field.children.children]]
+input_keys = ["name"]
+kind = "string"
+name = "name"
+
+[[field.children.children]]
+input_keys = ["deleted"]
+kind = "bool"
+name = "deleted"
+
+[[field.children.children]]
+input_keys = ["service_options"]
+kind = "composite"
+name = "service_options"
+
+[[field.children.children.children]]
+input_keys = ["db"]
+kind = "composite"
+name = "db"
+
+[[field.children.children.children.children]]
+input_keys = ["max_bytes_download"]
+kind = "int"
+name = "max_bytes_download"
+
+[[field.children.children.children.children]]
+input_keys = ["max_bytes_upload"]
+kind = "int"
+name = "max_bytes_upload"
+
+[[field.children.children.children]]
+input_keys = ["rdp"]
+kind = "composite"
+name = "rdp"
+
+[[field.children.children.children.children]]
+input_keys = ["audio"]
+kind = "bool"
+name = "audio"
+
+[[field.children.children.children.children]]
+input_keys = ["clipboard"]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children.children.children]]
+input_keys = ["file_transfer"]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children]]
+input_keys = ["ssh"]
+kind = "composite"
+name = "ssh"
+
+[[field.children.children.children.children]]
+input_keys = ["exec"]
+kind = "bool"
+name = "exec"
+
+[[field.children.children.children.children]]
+input_keys = ["file_transfer"]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children.children]]
+input_keys = ["other"]
+kind = "bool"
+name = "other"
+
+[[field.children.children.children.children]]
+input_keys = ["shell"]
+kind = "bool"
+name = "shell"
+
+[[field.children.children.children.children]]
+input_keys = ["unnels"]
+kind = "bool"
+name = "tunnels"
+
+[[field.children.children.children.children]]
+input_keys = ["x11"]
+kind = "bool"
+name = "x11"
+
+[[field.children.children.children]]
+input_keys = ["vnc"]
+kind = "composite"
+name = "vnc"
+
+[[field.children.children.children.children]]
+input_keys = ["clipboard"]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children.children.children]]
+input_keys = ["file_transfer"]
+kind = "bool"
+name = "file_transfer"
+
+[[field.children.children.children]]
+input_keys = ["web"]
+kind = "composite"
+name = "web"
+
+[[field.children.children.children.children]]
+input_keys = ["audio"]
+kind = "bool"
+name = "audio"
+
+[[field.children.children.children.children]]
+input_keys = ["clipboard"]
+kind = "bool"
+name = "clipboard"
+
+[[field.children.children.children.children]]
+input_keys = ["file_transfer"]
+kind = "bool"
+name = "file_transfer"
+
+[[field]]
+input_keys = ["created"]
+kind = "string"
+name = "created"
+
+[[field]]
+input_keys = ["updated"]
+kind = "string"
+name = "updated"
+
+[[field]]
+input_keys = ["updated_by"]
+kind = "string"
+name = "updated_by"
+
+[[field]]
+input_keys = ["host_certificate"]
+kind = "composite"
+name = "host_certificate"
+
+[[field.children]]
+input_keys = ["dns_names"]
+kind = "list"
+name = "dns_names"
+
+[[field.children]]
+input_keys = ["email_addresses"]
+kind = "list"
+name = "email_addresses"
+
+[[field.children]]
+input_keys = ["fingerprint_sha1"]
+kind = "string"
+name = "fingerprint_sha1"
+
+[[field.children]]
+input_keys = ["fingerprint_sha256"]
+kind = "string"
+name = "fingerprint_sha256"
+
+[[field.children]]
+input_keys = ["ip_addresses"]
+kind = "list"
+name = "ip_addresses"
+
+[[field.children]]
+input_keys = ["issuer"]
+kind = "string"
+name = "issuer"
+
+[[field.children]]
+input_keys = ["not_after"]
+kind = "string"
+name = "not_after"
+
+[[field.children]]
+input_keys = ["not_before"]
+kind = "string"
+name = "not_before"
+
+[[field.children]]
+input_keys = ["serial"]
+kind = "string"
+name = "serial"
+
+[[field.children]]
+input_keys = ["subject"]
+kind = "string"
+name = "subject"
+
+[[field]]
+input_keys = ["session_recording_options"]
+kind = "composite"
+name = "session_recording_options"
+
+[[field.children]]
+input_keys = ["disable_clipboard_recording"]
+kind = "bool"
+name = "disable_clipboard_recording"
+
+[[field.children]]
+input_keys = ["disable_file_transfer_recording"]
+kind = "bool"
+name = "disable_file_transfer_recording"
+
+[[field]]
+input_keys = ["ssh_host_public_key", "ssh_host_public_keys"]
+kind = "list_composite"
+name = "ssh_host_public_keys"
+
+[[field.children]]
+input_keys = ["fingerprint"]
+kind = "string"
+name = "fingerprint"
+
+[[field.children]]
+input_keys = ["key"]
+kind = "string"
+name = "key"
+# validators = ["ssh_key",]
+
+[[field]]
+input_keys = ["status"]
+kind = "list_composite"
+name = "status"
+
+[[field.children]]
+input_keys = ["k"]
+kind = "string"
+name = "k"
+
+[[field.children]]
+input_keys = ["v"]
+kind = "string"
+name = "v"
+
+# Services
+
+[[field]]
+input_keys = ["service", "services"]
+kind = "list_composite"
+name = "services"
+validators = ["services"]
+
+[[field.children]]
+input_keys = ["address"]
+kind = "string"
+name = "address"
+
+[[field.children]]
+input_keys = ["created"]
+kind = "string"
+name = "created"
+management = "ignored"
+
+[[field.children]]
+input_keys = ["updated"]
+kind = "string"
+name = "updated"
+management = "ignored"
+
+[[field.children]]
+input_keys = ["created"]
+kind = "string"
+name = "created"
+management = "ignored"
+
+[[field.children]]
+input_keys = ["allowed_domains"]
+kind = "list"
+name = "allowed_domains"
+
+[[field.children]]
+input_keys = ["auth_type"]
+kind = "string"
+name = "auth_type"
+
+[[field.children]]
+input_keys = ["browser"]
+kind = "string"
+name = "browser"
+
+[[field.children]]
+input_keys = ["certificate_template"]
+kind = "string"
+name = "certificate_template"
+
+[[field.children]]
+input_keys = ["created"]
+kind = "string"
+name = "created"
+
+[[field.children]]
+input_keys = ["db"]
+kind = "composite"
+name = "db"
+
+[[field.children.children]]
+input_keys = ["audit_skip_bytes"]
+kind = "int"
+name = "audit_skip_bytes"
+
+[[field.children.children]]
+input_keys = ["protocol"]
+kind = "string"
+name = "protocol"
+
+[[field.children.children]]
+input_keys = ["tls_certificate_trust_anchors"]
+kind = "string"
+name = "tls_certificate_trust_anchors"
+
+[[field.children.children]]
+input_keys = ["tls_certificate_validation"]
+kind = "string"
+name = "tls_certificate_validation"
+
+[[field.children]]
+input_keys = ["login_page_url"]
+kind = "string"
+name = "login_page_url"
+
+[[field.children]]
+input_keys = ["login_request_password_property"]
+kind = "string"
+name = "login_request_password_property"
+
+[[field.children]]
+input_keys = ["login_request_url"]
+kind = "string"
+name = "login_request_url"
+
+[[field.children]]
+input_keys = ["password_field_name"]
+kind = "string"
+name = "password_field_name"
+
+[[field.children]]
+input_keys = ["port"]
+kind = "int"
+name = "port"
+
+[[field.children]]
+input_keys = ["service"]
+kind = "string"
+name = "service"
+translator = "service"
+
+[[field.children]]
+input_keys = ["service_version"]
+kind = "string"
+name = "service_version"
+
+[[field.children]]
+input_keys = ["source"]
+kind = "string"
+name = "source"
+
+[[field.children]]
+input_keys = ["ssh_tunnel_port"]
+kind = "int"
+name = "ssh_tunnel_port"
+
+[[field.children]]
+input_keys = ["status"]
+kind = "string"
+name = "status"
+
+[[field.children]]
+input_keys = ["status_updated"]
+kind = "string"
+name = "status_updated"
+
+[[field.children]]
+input_keys = ["tls_max_version"]
+kind = "string"
+name = "tls_max_version"
+
+[[field.children]]
+input_keys = ["tls_min_version"]
+kind = "string"
+name = "tls_min_version"
+
+[[field.children]]
+input_keys = ["updated"]
+kind = "string"
+name = "updated"
+
+[[field.children]]
+input_keys = ["use_for_password_rotation"]
+kind = "bool"
+name = "use_for_password_rotation"
+
+[[field.children]]
+input_keys = ["use_legacy_cipher_suites"]
+kind = "bool"
+name = "use_legacy_cipher_suites"
+
+[[field.children]]
+input_keys = ["username_field_name"]
+kind = "string"
+name = "username_field_name"
+
+[[field.children]]
+input_keys = ["username_field_name"]
+kind = "string"
+name = "username_field_name"
+
+[[field.children]]
+input_keys = ["enable_web_compatibility_mode", ]
+kind = "bool"
+name = "enable_web_compatibility_mode"
+
+[[field.children]]
+input_keys = ["allow_modified_web_params", ]
+kind = "bool"
+name = "allow_modified_web_params"
+
+[[field.children]]
+input_keys = ["enable_popups", ]
+kind = "bool"
+name = "enable_popups"
+
+[[field.children]]
+input_keys = ["enable_urlbar", ]
+kind = "bool"
+name = "enable_urlbar"
+
+[[field.children]]
+input_keys = ["use_plaintext_vnc", ]
+kind = "bool"
+name = "use_plaintext_vnc"
+
+[[field.children]]
+input_keys = ["enable_navibar", ]
+kind = "bool"
+name = "enable_navibar"
+
+[[field.children]]
+input_keys = ["enable_devtools", ]
+kind = "bool"
+name = "enable_devtools"
+
+[[field.children]]
+input_keys = ["kiosk_mode", ]
+kind = "bool"
+name = "kiosk_mode"
+
+[[field.children]]
+input_keys = ["timezone", ]
+kind = "string"
+name = "timezone"
+
+[[field.children]]
+input_keys = ["latency_in_microseconds", ]
+kind = "string"
+name = "latency_in_microseconds"
+
+[[field.children]]
+input_keys = ["protocol_version", ]
+kind = "string"
+name = "protocol_version"
+
+[[field.children]]
+input_keys = ["web_x11_backend", ]
+kind = "string"
+name = "web_x11_backend"
+
+[[field.children]]
+input_keys = ["rds_type", ]
+kind = "string"
+name = "rds_type"
+
+[[field.children]]
+input_keys = ["rds_lb", ]
+kind = "composite"
+name = "rds_lb"
+
+[[field.children.children]]
+input_keys = ["x", ]
+kind = "string"
+name = "x"
+
+[[field.children]]
+input_keys = ["rds_broker", ]
+kind = "composite"
+name = "rds_broker"
+
+[[field.children.children]]
+input_keys = ["x", ]
+kind = "string"
+name = "x"
+
+[[field.children]]
+input_keys = ["idle_time_limit", ]
+kind = "int"
+name = "idle_time_limit"
+
+# end of Services block
+
+[[field]]
+input_keys = ["user_message", ]
+kind = "string"
+name = "user_message"
+
+[[field]]
+input_keys = ["host_certificate_raw", ]
+kind = "string"
+name = "host_certificate_raw"
+
+[[field]]
+input_keys = ["toch", ]
+kind = "bool"
+name = "toch"
+
