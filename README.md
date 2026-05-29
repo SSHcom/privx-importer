@@ -1,7 +1,5 @@
 # PrivX inventory import module
 
-Version 1.0.0
-
 Import infrastructure inventory data into PrivX from CSV and other external sources.
 
 The tool normalizes imported records, validates them, compares the desired state
