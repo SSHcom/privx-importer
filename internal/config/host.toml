@@ -478,14 +478,17 @@ input_keys = ["role", "roles"]
 kind = "list_composite"
 name = "roles"
 
+# PrivX requires the role id. The input column "name" is accepted as an alias of id,
+# so a role name in the CSV is resolved to the role id by the "role" translator.
 [[field.children.children]]
-input_keys = ["id"]
+input_keys = ["id", "name"]
 kind = "string"
 name = "id"
 translator = "role"
 
+# The role name is read from PrivX only; it is not an input column (see id above).
 [[field.children.children]]
-input_keys = ["name"]
+input_keys = ["role_name_readonly"]
 kind = "string"
 name = "name"
 

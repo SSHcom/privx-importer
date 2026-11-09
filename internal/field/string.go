@@ -42,6 +42,9 @@ func (f StringField) Set(value any) (Field, error) {
 
 	// Would be better to fix this where this value comes from, not here.
 	switch v := value.(type) {
+	case nil:
+		// JSON null from the PrivX API means "not set".
+		value = ""
 	case float64:
 		value = strconv.FormatFloat(v, 'f', -1, 64)
 	}

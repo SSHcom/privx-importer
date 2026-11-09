@@ -342,7 +342,8 @@ func applyTranslations(
 
 	return fields.Transform(
 		func(f field.Field) (field.Field, error) {
-			def, ok := catalog.Fields[f.Name()]
+			// FieldDef covers nested fields too; catalog.Fields has only top-level ones.
+			def, ok := catalog.FieldDef(f.Name())
 			if !ok || def.Translator == "" {
 				return f, nil
 			}
